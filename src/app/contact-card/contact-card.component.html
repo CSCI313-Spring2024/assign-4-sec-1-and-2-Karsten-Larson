@@ -1,0 +1,27 @@
+<div class="card mt-3">
+    <div class="card-header bg-transparent">
+        @if (showLink) {
+        <a class="card-title" [routerLink]="['/contact', contact.id]">
+            <h3>{{contact.firstName}} {{contact.lastName}}</h3>
+        </a>
+        } @else {
+        <h3 class="card-title">{{contact.firstName}} {{contact.lastName}}</h3>
+        }
+    </div>
+    <div class="card-body">
+        <ul class="card-text">
+            @if(contact.phoneNumber.trim() != '') {
+            <li>Phone Number: {{contact.phoneNumber}}</li>
+            }
+            @if(contact.email.trim() != '') {
+            <li>Email Address: {{contact.email}}</li>
+            }
+        </ul>
+    </div>
+    <div class="card-footer">
+        <div class="d-flex justify-content-end gap-2">
+            <a class="btn btn-primary" [routerLink]="['/', 'edit', contact.id]">Edit</a>
+            <button class="btn btn-danger" (click)="deleteContact()">Delete</button>
+        </div>
+    </div>
+</div>

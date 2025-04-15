@@ -1,0 +1,5 @@
+<div class="d-flex flex-column">
+    @for (contact of contacts(); track contact){
+    <app-contact-card [id]="contact.id" [showLink]="true"></app-contact-card>
+    }
+</div>
